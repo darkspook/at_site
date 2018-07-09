@@ -51,11 +51,11 @@
       <div class=" d-none d-md-block container">
       <div class="row">
         <div class="col-6">
-          <p class="text-left" style="color:#000;">{{ site.settings.header_text }}</p>
+          <p class="text-left">{{ site.settings.header_text }}</p>
         </div>
         <div class="col-6">
           <ul class="float-right">
-            <!--{% include "_language_picker.html" %}-->
+            {% include "_language_picker.html" %}
             {% if user.is_authenticated %}
               {% if user.is_staff or request.impersonator.is_staff %}
                 <li>
@@ -81,18 +81,7 @@
                 </li>
               {% endif %}
             {% else %}
-			  <li>
-                <a rel="nofollow" href="{% url 'page:details' slug='about' %}">
-                  {% trans "Company Profile" context "Main navigation item" %}</a>
-              </li>
-			  <li>
-                <a rel="nofollow" href="{% url 'storelocation' %}">
-                  {% trans "Store Location" context "Main navigation item" %}</a>
-              </li>
-	      <li>
-		      <a rel="nofollow" href="http://alsonstrading.ph:88/accounts" target="_blank">My Payments</a>
-		</li>
-              <!--<li>
+              <li>
                 <a rel="nofollow" href="{% url "account:signup" %}">
                   {% trans "Register" context "Main navigation item" %}</a>
               </li>
@@ -100,7 +89,7 @@
                 <a rel="nofollow" href="{% url "account:login" %}">
                   {% trans "Log in" context "Main navigation item" %}
                 </a>
-              </li>-->
+              </li>
             {% endif %}
           </ul>
         </div>
@@ -116,7 +105,7 @@
               <span>{% trans "menu" context "Hamburger button text" %}</span>
             </div>
             <a href="{% url 'home' %}">
-              <svg data-src="{% static "images/logo.svg" %}" height="73px" width="250px"/>
+              <svg data-src="{% static "images/logo.svg" %}" height="38px" width="176px"/>
             </a>
           </div>
           <div class="col-2 col-md-4 navbar__search static">
@@ -138,7 +127,7 @@
               </form>
             {% endif %}
           </div>
-          <!-- <div class="col-2 col-md-4">
+          <div class="col-2 col-md-4">
             <div class="navbar__brand__cart float-right">
               <a rel="nofollow" class="cart__icon" href="{% url "cart:index" %}">
                 <span class="cart-label d-none d-md-inline-block">
@@ -159,7 +148,7 @@
                 {% include 'cart_dropdown.html' %}
               </div>
             </div>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>
@@ -191,7 +180,7 @@
       <div class="row">
         <div class="col-md-3">
           <a href="{% url 'home' %}" class="footer__logo">
-            <svg data-src="{% static "images/logo2.svg" %}" height="112px" width="200px"/>
+            <svg data-src="{% static "images/logo.svg" %}" height="38px" width="176px"/>
           </a>
         </div>
         <div class="col-md-3 col-sm-6">
@@ -199,20 +188,11 @@
         </div>
         <div class="col-md-3 col-sm-6">
           <ul>
-			  <li>
-                <a rel="nofollow" href="{% url "page:details" slug="about" %}">
-                  {% trans "Company Profile" context "Main navigation item" %}
-				</a>
-              </li>
-			  <li>
-                <a rel="nofollow" href="{% url 'storelocation' %}">
-                  {% trans "Store Location" context "Main navigation item" %}</a>
-              </li>
-            <!--<li>
+            <li>
               <a rel="nofollow" href="{% url "cart:index" %}">
                 {% trans "Your Cart" context "Main navigation item" %}
               </a>
-            </li>-->
+            </li>
             {% if user.is_authenticated %}
               {% if user.is_staff %}
                 <li>
@@ -244,7 +224,7 @@
                 </li>
               {% endif %}
             {% else %}
-              <!--<li>
+              <li>
                 <a rel="nofollow" href="{% url "account:signup" %}">
                   {% trans "Register" context "Main navigation item" %}
                 </a>
@@ -253,15 +233,35 @@
                 <a rel="nofollow" href="{% url "account:login" %}">
                   {% trans "Log in" context "Main navigation item" %}
                 </a>
-              </li>-->
+              </li>
             {% endif %}
           </ul>
         </div>
         <div class="col-md-3 col-sm-12">
-          <!--<a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/alsonstradingPH/">
+          <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/mirumeelabs/">
             <svg data-src="{% static "images/facebook-logo.svg" %}" width="45px" height="45px"/>
-          </a>-->
-		  {% include "includes/brands.html" %}
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://github.com/mirumee/saleor">
+            <svg data-src="{% static "images/github-logo.svg" %}" width="45px" height="45px"/>
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/getsaleor">
+            <svg data-src="{% static "images/twitter-logo.svg" %}" width="45px" height="45px"/>
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://plus.google.com/+Mirumee">
+            <svg data-src="{% static "images/google-logo.svg" %}" width="45px" height="45px"/>
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://www.meetup.com/Mirumee-Talks/">
+            <svg data-src="{% static "images/meetup-logo.svg" %}" width="45px" height="45px"/>
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://linkedin.com/company/mirumee-software">
+            <svg data-src="{% static "images/linkedin-logo.svg" %}" width="45px" height="45px"/>
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://dribbble.com/mirumee">
+            <svg data-src="{% static "images/dribbble-logo.svg" %}" width="45px" height="45px"/>
+          </a>
+          <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/explore/tags/mirumee/">
+            <svg data-src="{% static "images/instagram-logo.svg" %}" width="45px" height="45px"/>
+          </a>
         </div>
       </div>
     </div>

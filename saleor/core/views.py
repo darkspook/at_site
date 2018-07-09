@@ -23,7 +23,9 @@ def home(request):
             'parent': None,
             'products': products,
             'webpage_schema': json.dumps(webpage_schema)})
-
+		
+def storelocation(request):
+    return TemplateResponse(request, 'store_location.html')
 
 @staff_member_required
 def styleguide(request):

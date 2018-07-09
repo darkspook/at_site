@@ -33,11 +33,18 @@
     <meta property="og:image:width" content="510">
     <meta property="og:image:height" content="510">
   {% else %}
-    <meta property="og:image" content="{% static "images/block1.png" %}">
+    <meta property="og:image" content='{% static "images/block1.png" %}'>
   {% endif %}
 {% endblock meta_tags %}
 
 {% block breadcrumb %}
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <ul class="breadcrumbs list-unstyled">
     <li>
       <a href="{% url 'home' %}">
@@ -161,20 +168,25 @@
         {% block orderform %}
           {% if show_variant_picker %}
             {% csrf_token %}
+			<style>
+			.clearfix {display: none;}
+			</style>
             <div id="variant-picker" data-variant-picker-data="{{ variant_picker_data }}" data-action="{% url 'product:add-to-cart' product_id=product.pk slug=product.get_slug %}"></div>
+			<a href="https://m.me/alsonstradingPH" class="btn primary" target="_blank" style="text-decoration:none">Negotiate</a>
           {% else %}
             <form id="product-form" role="form" class="product-form clearfix" method="post" action="{% url 'product:add-to-cart' product_id=product.pk slug=product.get_slug %}" novalidate>
               {% csrf_token %}
               {% bootstrap_field form.variant %}
-              <div class="product__info__quantity">
+              <!--<div class="product__info__quantity">
                 {% bootstrap_field form.quantity %}
               </div>
-
+				
               <div class="form-group product__info__button">
                 <button class="btn primary">
                   {% trans "Add to cart" context "Product details primary action" %}
                 </button>
-              </div>
+              </div>-->
+			  <a href="https://m.me/alsonstradingPH" class="btn primary" target="_blank" style="text-decoration:none">Negotiate</a>
             </form>
           {% endif %}
         {% endblock %}
@@ -193,6 +205,10 @@
         {{ product.description|safe }}
       </div>
       <hr>
+	  <div id="fb-root"></div>
+	  <!-- FB Like & Share button -->
+{% build_absolute_uri request=request location=product.get_absolute_url as product_url %}
+	  <div class="fb-like" data-href="{{ product_url }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
       <table>
         {% for attribute, value in product_attributes.items %}
           <tr>

@@ -140,17 +140,17 @@
                   </li>
                 {% endif %}
                 {% if perms.discount.view_voucher %}
-                  <li class="{% block menu_vouchers_class %}{% endblock %}">
+                  <!--<li class="{% block menu_vouchers_class %}{% endblock %}">
                     <a href="{% url 'dashboard:voucher-list' %}">
                       {% trans "Vouchers" context "Dashboard vouchers list" %}
                     </a>
-                  </li>
+                  </li>-->
                 {% endif %}
               </ul>
             </li>
             {% endif %}
             {% if perms.order.view_order or perms.account.view_user %}
-            <li class="side-nav-section">
+            <!--<li class="side-nav-section">
               <p>
                 {% trans "Sales" context "Dashboard sales. `Sales' is noun of to sell" %}
               </p>
@@ -170,7 +170,7 @@
                   </li>
                 {% endif %}
               </ul>
-            </li>
+            </li>-->
             {% endif %}
             {% if perms.account.view_group or perms.account.edit_group %}
               <li class="side-nav-section">
@@ -216,11 +216,11 @@
                     </li>
                   {% endif %}
                   {% if perms.shipping.view_shipping %}
-                    <li class="{% block menu_delivery_class %}{% endblock %}">
+                    <!--<li class="{% block menu_delivery_class %}{% endblock %}">
                       <a href="{% url 'dashboard:shipping-methods' %}">
                         {% trans "Shipping methods" context "Dashboard shipping methods list" %}
                       </a>
-                    </li>
+                    </li>-->
                   {% endif %}
                   {% if perms.menu.view_menus %}
                     <li class="{% block menu_menus_class %}{% endblock %}">

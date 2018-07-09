@@ -12,8 +12,9 @@ from django_prices.templatetags.prices_i18n import get_currency_fraction
 def get_list(text):
     return [item.strip() for item in text.split(',')]
 
-
-DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'True'))
+#DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'True'))
+#DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'False'))
+DEBUG = False
 
 SITE_ID = 1
 
@@ -67,7 +68,8 @@ LANGUAGES = [
     ('vi', _('Vietnamese')),
     ('zh-hans', _('Chinese'))]
 LOCALE_PATHS = [os.path.join(PROJECT_ROOT, 'locale')]
-USE_I18N = True
+#USE_I18N = True
+USE_I18N = False
 USE_L10N = True
 USE_TZ = True
 
@@ -147,7 +149,8 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+#SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'jcbadp!cj_-fyas=en&l61iu48a9k9!rpb0@7a@_^c&by4e*fg*n-0DS'
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -273,7 +276,7 @@ AUTH_USER_MODEL = 'account.User'
 LOGIN_URL = '/account/login/'
 
 DEFAULT_COUNTRY = 'US'
-DEFAULT_CURRENCY = 'USD'
+DEFAULT_CURRENCY = 'PHP'
 DEFAULT_DECIMAL_PLACES = get_currency_fraction(DEFAULT_CURRENCY)
 AVAILABLE_CURRENCIES = [DEFAULT_CURRENCY]
 
@@ -327,7 +330,9 @@ bootstrap4 = {
 
 TEST_RUNNER = ''
 
-ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost'))
+#ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost'))
+ALLOWED_HOSTS = ['www.alsonstrading.ph', 'alsonstrading.ph', '192.168.0.3', '122.54.205.40']
+#ALLOWED_HOSTS = ['*']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
