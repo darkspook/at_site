@@ -10,7 +10,7 @@
 {% block content %}
   <div class="row">
     <div class="col s12">
-      <!--<div class="card">
+      <div class="card">
         <div class="data-table-header{% if not preauthorized_payments %} data-table-header--no-data{% endif %}">
           <span class="data-table-title" title="{% blocktrans trimmed with counter=preauthorized_payments.count context "Dashboard homepage summary header title" %}Showing last {{ counter }} results{% endblocktrans %}">
             {% trans "Preauthorized payments" context "Dashboard homepage table title" %}
@@ -62,9 +62,9 @@
             </p>
           </div>
         {% endif %}
-      </div>-->
+      </div>
 
-      <!--<div class="card">
+      <div class="card">
         <div class="data-table-header{% if not orders_to_ship %} data-table-header--no-data{% endif %}">
           <span class="data-table-title" title="{% blocktrans trimmed with counter=orders_to_ship|length context "Dashboard homepage summary header title" %}Showing last {{ counter }} results{% endblocktrans %}">
             {% trans "Orders ready for shipment" context "Dashboard homepage table title" %}
@@ -127,8 +127,8 @@
             </p>
           </div>
         {% endif %}
-      </div>-->
-      <!--<div class="card">
+      </div>
+      <div class="card">
         <div class="data-table-header{% if not low_stock %} data-table-header--no-data{% endif %}">
           <span class="data-table-title" title="{% blocktrans trimmed with counter=low_stock.count context "Dashboard homepage summary header title" %}Showing last {{ counter }} results{% endblocktrans %}">
             {% trans "Products with low stock" context "Dashboard homepage table title" %}
@@ -168,7 +168,7 @@
             </p>
           </div>
         {% endif %}
-      </div>-->
+      </div>
     </div>
   </div>
 {% endblock %}

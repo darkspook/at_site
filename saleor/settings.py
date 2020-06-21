@@ -12,9 +12,9 @@ from django_prices.templatetags.prices_i18n import get_currency_fraction
 def get_list(text):
     return [item.strip() for item in text.split(',')]
 
-#DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'True'))
+DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'True'))
 #DEBUG = ast.literal_eval(os.environ.get('DEBUG', 'False'))
-DEBUG = False
+#DEBUG = False
 
 SITE_ID = 1
 
@@ -42,8 +42,8 @@ DATABASES = {
         default='postgres://saleor:saleor@localhost:5432/saleor',
         conn_max_age=600)}
 
-
-TIME_ZONE = 'America/Chicago'
+#TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Taipei'
 LANGUAGE_CODE = 'en'
 LANGUAGES = [
     ('bg', _('Bulgarian')),
@@ -331,8 +331,9 @@ bootstrap4 = {
 TEST_RUNNER = ''
 
 #ALLOWED_HOSTS = get_list(os.environ.get('ALLOWED_HOSTS', 'localhost'))
-ALLOWED_HOSTS = ['www.alsonstrading.ph', 'alsonstrading.ph', '192.168.0.3', '122.54.205.40']
-#ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['www.alsonstrading.ph', 'alsonstrading.ph', '192.168.0.3', '122.54.205.40']
+#ALLOWED_HOSTS = ['www.alsonstrading.ph', 'alsonstrading.ph', '.alsonstrading.ph','*.alsonstrading.ph', '192.168.0.3', '122.54.205.40']
+ALLOWED_HOSTS = ['*']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

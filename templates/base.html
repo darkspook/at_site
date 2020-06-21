@@ -90,7 +90,7 @@
                   {% trans "Store Location" context "Main navigation item" %}</a>
               </li>
 	      <li>
-		      <a rel="nofollow" href="http://alsonstrading.ph:88/accounts" target="_blank">My Payments</a>
+		      <a rel="nofollow" href="https://www.alsonstrading.ph/accounts" target="_blank">My Payments</a>
 		</li>
               <!--<li>
                 <a rel="nofollow" href="{% url "account:signup" %}">
@@ -112,11 +112,12 @@
         <div class="row no-gutters">
           <div class="col-8 col-md-4 navbar__logo">
             <div class="menu-icon-mobile d-md-none navbar__brand__menu-toggle closed open">
-              <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
+              <svg data-src="{% static 'images/mobile-menu.svg' %}" width="28px" height="20px"/>
               <span>{% trans "menu" context "Hamburger button text" %}</span>
             </div>
             <a href="{% url 'home' %}">
-              <svg data-src="{% static "images/logo.svg" %}" height="73px" width="250px"/>
+              <!--<svg data-src="{% static 'images/logo.svg' %}" height="73px" width="250px"/>-->
+			  <img class="img-fluid" src="{% static 'images/logo.png' %}"> 
             </a>
           </div>
           <div class="col-2 col-md-4 navbar__search static">
@@ -138,8 +139,8 @@
               </form>
             {% endif %}
           </div>
-          <!-- <div class="col-2 col-md-4">
-            <div class="navbar__brand__cart float-right">
+          <div class="col-2 col-md-4">
+            <!-- <div class="navbar__brand__cart float-right">
               <a rel="nofollow" class="cart__icon" href="{% url "cart:index" %}">
                 <span class="cart-label d-none d-md-inline-block">
                   {% trans "Your Cart" context "Main navigation item" %}
@@ -158,8 +159,8 @@
               <div class="cart-dropdown d-none">
                 {% include 'cart_dropdown.html' %}
               </div>
-            </div>
-          </div>-->
+            </div>-->
+          </div>
         </div>
       </div>
     </div>
@@ -191,7 +192,7 @@
       <div class="row">
         <div class="col-md-3">
           <a href="{% url 'home' %}" class="footer__logo">
-            <svg data-src="{% static "images/logo2.svg" %}" height="112px" width="200px"/>
+            <!--<svg data-src="{% static "images/logo2.svg" %}" height="112px" width="200px"/>-->
           </a>
         </div>
         <div class="col-md-3 col-sm-6">

@@ -69,6 +69,7 @@
                   {{ product_form.name|materializecss }}
                 </div>
                 <div class="row">
+				<style>div.rich-text-editor {height: auto !important;}</style>
                   {{ product_form.description|materializecss }}
                 </div>
                 <span class="card-title">Availability</span>
@@ -86,10 +87,10 @@
                 <div class="row">
                   {{ product_form.price|materializecss }}
                 </div>
-                <div class="row">
+                <!--<div class="row">
                   {{ product_form.tax_rate|materializecss }}
                   {{ product_form.charge_taxes|materializecss }}
-                </div>
+                </div>-->
                 {% if not product.product_type.has_variants %}
                   <div class="row">
                     {{ variant_form.sku|materializecss }}
